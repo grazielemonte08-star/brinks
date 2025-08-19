@@ -2,104 +2,47 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Para a menina linda da maresia 💙</title>
   <style>
     body {
       margin: 0;
       padding: 0;
-      background: linear-gradient(to right, #ff758c, #ff7eb3);
       overflow: hidden;
-      color: white;
-      font-family: 'Arial', sans-serif;
-      text-align: center;
+      background: linear-gradient(to right, #ff758c, #ff7eb3);
+      font-family: Arial, sans-serif;
     }
-    h1 {
-      margin-top: 80px;
-      font-size: 3em;
-      text-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+
+    /* Estilo da música */
+    audio {
+      display: none; /* Esconde o player */
     }
-    p {
-      font-size: 1.5em;
-    }
-    .heart {
+
+    /* Gatinhos flutuantes */
+    .gato {
       position: absolute;
-      top: -10px;
-      color: red;
-      font-size: 24px;
-      animation: fall linear forwards;
+      width: 50px;
+      animation: flutuar 10s infinite linear;
     }
-    @keyframes fall {
-      to {
-        transform: translateY(100vh);
-        opacity: 0;
-      }
-    }
-    button {
-      margin-top: 30px;
-      padding: 12px 25px;
-      font-size: 1.2em;
-      border: none;
-      border-radius: 10px;
-      background: white;
-      color: #ff4b7d;
-      cursor: pointer;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-    button:hover {
-      background: #ffe4ec;
-      transform: scale(1.1);
-    }
-    #surpresa {
-      display: none;
-      margin-top: 20px;
-      font-size: 1.5em;
-      animation: fadeIn 1s forwards;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    iframe {
-      position: absolute;
-      width: 0;
-      height: 0;
-      border: none;
+
+    @keyframes flutuar {
+      0% { transform: translateY(100vh) translateX(0); opacity: 0; }
+      10% { opacity: 1; }
+      50% { opacity: 1; }
+      100% { transform: translateY(-10vh) translateX(100vw); opacity: 0; }
     }
   </style>
 </head>
 <body>
-  <h1>🌊 Oi, menina linda da maresia 🌊</h1>
-  <p>Você é meu pesadelo favorito ✨</p>
-  <p>Esse site é só pra dizer que te odeio ❤️</p>
 
-  <!-- Botão surpresa -->
-  <button onclick="mostrarSurpresa()">Clique aqui 😏</button>
-  <div id="surpresa">Hehe... agora não tem mais volta, já sei que você sorriu 😉❤️</div>
+  <!-- Música -->
+  <audio id="musica" src="musica.mp3.mp3" loop autoplay></audio>
 
-  <!-- Música do YouTube escondida tocando em loop -->
-  <iframe 
-    src="https://www.youtube.com/embed/thU4mPDqr4I?autoplay=1&loop=1&playlist=thU4mPDqr4I" 
-    allow="autoplay">
-  </iframe>
+  <!-- Gatinhos -->
+  <img src="https://i.imgur.com/5QfKQfK.png" class="gato" style="top: 10%; left: 5%;">
+  <img src="https://i.imgur.com/5QfKQfK.png" class="gato" style="top: 50%; left: 20%;">
+  <img src="https://i.imgur.com/5QfKQfK.png" class="gato" style="top: 30%; left: 60%;">
+  <img src="https://i.imgur.com/5QfKQfK.png" class="gato" style="top: 70%; left: 80%;">
 
-  <script>
-    function createHeart() {
-      const heart = document.createElement("div");
-      heart.classList.add("heart");
-      heart.innerHTML = "❤️";
-      heart.style.left = Math.random() * 100 + "vw";
-      heart.style.animationDuration = (Math.random() * 3 + 2) + "s";
-      document.body.appendChild(heart);
-      setTimeout(() => {
-        heart.remove();
-      }, 5000);
-    }
-    setInterval(createHeart, 300);
-
-    function mostrarSurpresa() {
-      document.getElementById("surpresa").style.display = "block";
-    }
-  </script>
 </body>
 </html>
