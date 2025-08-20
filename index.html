@@ -2,39 +2,104 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Para a menina linda da maresia 💙</title>
   <style>
     body {
-      text-align: center;
-      font-family: Arial, sans-serif;
-      background-color: #f0f8ff;
       margin: 0;
-      padding: 20px;
+      padding: 0;
+      background: linear-gradient(to right, #ff758c, #ff7eb3);
+      overflow: hidden;
+      color: white;
+      font-family: 'Arial', sans-serif;
+      text-align: center;
     }
     h1 {
-      color: #2c3e50;
+      margin-top: 80px;
+      font-size: 3em;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.4);
     }
-    img {
-      max-width: 300px;
+    p {
+      font-size: 1.5em;
+    }
+    .heart {
+      position: absolute;
+      top: -10px;
+      color: red;
+      font-size: 24px;
+      animation: fall linear forwards;
+    }
+    @keyframes fall {
+      to {
+        transform: translateY(100vh);
+        opacity: 0;
+      }
+    }
+    button {
+      margin-top: 30px;
+      padding: 12px 25px;
+      font-size: 1.2em;
+      border: none;
       border-radius: 10px;
-      margin-top: 20px;
+      background: white;
+      color: #ff4b7d;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
     }
-    audio {
+    button:hover {
+      background: #ffe4ec;
+      transform: scale(1.1);
+    }
+    #surpresa {
+      display: none;
       margin-top: 20px;
+      font-size: 1.5em;
+      animation: fadeIn 1s forwards;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    iframe {
+      position: absolute;
+      width: 0;
+      height: 0;
+      border: none;
     }
   </style>
 </head>
 <body>
-  <h1>Um presente especial 🐱💙</h1>
+  <h1>🌊 Oi, menina fea da maresia 🌊</h1>
+  <p>Você é meu pesadelo favorito ✨</p>
+  <p>Esse site é só pra dizer que te odeio ❤️</p>
 
-  <!-- Imagem do gatinho -->
-  <img src="gatinho.png" alt="Gatinho fofo">
+  <!-- Botão surpresa -->
+  <button onclick="mostrarSurpresa()">Clique aqui 😏</button>
+  <div id="surpresa">Hehe... agora não tem mais volta, já sei que você sorriu mocreia se não sorriu vsfd 😉❤️</div>
 
-  <!-- Música -->
-  <audio controls autoplay>
-    <source src="musica.mp3.mp3" type="audio/mpeg">
-    Seu navegador não suporta áudio.
-  </audio>
+  <!-- Música do YouTube escondida tocando em loop -->
+  <iframe 
+    src="https://www.youtube.com/embed/thU4mPDqr4I?autoplay=1&loop=1&playlist=thU4mPDqr4I" 
+    allow="autoplay">
+  </iframe>
+
+  <script>
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.innerHTML = "❤️";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (Math.random() * 3 + 2) + "s";
+      document.body.appendChild(heart);
+      setTimeout(() => {
+        heart.remove();
+      }, 5000);
+    }
+    setInterval(createHeart, 300);
+
+    function mostrarSurpresa() {
+      document.getElementById("surpresa").style.display = "block";
+    }
+  </script>
 </body>
 </html>
