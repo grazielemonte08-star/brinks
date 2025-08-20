@@ -6,43 +6,35 @@
   <title>Para a menina linda da maresia 💙</title>
   <style>
     body {
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-      background: linear-gradient(to right, #ff758c, #ff7eb3);
+      text-align: center;
       font-family: Arial, sans-serif;
+      background-color: #f0f8ff;
+      margin: 0;
+      padding: 20px;
     }
-
-    /* Estilo da música */
+    h1 {
+      color: #2c3e50;
+    }
+    img {
+      max-width: 300px;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
     audio {
-      display: none; /* Esconde o player */
-    }
-
-    /* Gatinhos flutuantes */
-    .gato {
-      position: absolute;
-      width: 50px;
-      animation: flutuar 10s infinite linear;
-    }
-
-    @keyframes flutuar {
-      0% { transform: translateY(100vh) translateX(0); opacity: 0; }
-      10% { opacity: 1; }
-      50% { opacity: 1; }
-      100% { transform: translateY(-10vh) translateX(100vw); opacity: 0; }
+      margin-top: 20px;
     }
   </style>
 </head>
 <body>
+  <h1>Um presente especial 🐱💙</h1>
+
+  <!-- Imagem do gatinho -->
+  <img src="gatinho.png" alt="Gatinho fofo">
 
   <!-- Música -->
-  <audio id="musica" src="musica.mp3.mp3" loop autoplay></audio>
-
-  <!-- Gatinhos -->
-  <img src="https://i.imgur.com/5QfKQfK.png" class="gato" style="top: 10%; left: 5%;">
-  <img src="https://i.imgur.com/5QfKQfK.png" class="gato" style="top: 50%; left: 20%;">
-  <img src="https://i.imgur.com/5QfKQfK.png" class="gato" style="top: 30%; left: 60%;">
-  <img src="https://i.imgur.com/5QfKQfK.png" class="gato" style="top: 70%; left: 80%;">
-
+  <audio controls autoplay>
+    <source src="musica.mp3.mp3" type="audio/mpeg">
+    Seu navegador não suporta áudio.
+  </audio>
 </body>
 </html>
